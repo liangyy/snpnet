@@ -577,7 +577,7 @@ checkEarlyStopping <- function(metric.val, max.valid.idx, iter, configs){
     max.val.2 <- max(metric.val[(max.valid.idx.lag+1):max.valid.idx])
     snpnetLogger(sprintf('stopping lag=%g, max.val.1=%g max.val.2=%g', max.valid.idx.lag, max.val.1, max.val.2))
     if (
-        (configs[['early.stopping']]) &&
+        (configs[['early.stopping']] == -1) &&
         (max.valid.idx > configs[['stopping.lag']]) &&
         (max.val.1 > max.val.2)
     ) {
